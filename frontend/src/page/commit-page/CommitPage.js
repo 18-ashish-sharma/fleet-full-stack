@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CommitPageWrapper, CommitDetails, CodeDiff } from "./CommitPage.style";
-import useFetchData from "../customHooks/useFetchData";
+import useFetchData from "../../customHooks/useFetchData";
 
 const CommitPage = ({ match }) => {
   const { owner, repository, oid } = match.params;

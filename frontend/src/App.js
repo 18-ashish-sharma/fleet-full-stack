@@ -1,17 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CommitPage from './page/CommitPage';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CommitPage from './page/commit-page/CommitPage';
+import HomePage from './page/commit-page/home/home';
 
 const App = () => {
   return (
     <Router>
-      <Switch>
+      <Routes>
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
         <Route
           path="/repositories/:owner/:repository/commit/:commitSHA"
-          render={(props) => <CommitPage {...props} />}
+          element={<CommitPage />}
         />
-      </Switch>
+      </Routes>
     </Router>
   );
 };
